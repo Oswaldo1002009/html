@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700");
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #1e272e;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.author {
+  color: #fff;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 30px;
+}
+.author span {
+  display: block;
+  text-transform: none;
+}
+.author .sociales {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.author .sociales li {
+  margin: 5px;
+}
+.author .sociales li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  color: #fff;
+  background: red;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+.author .sociales li a.twitter {
+  background: #1da1f2;
+}
+.author .sociales li a.facebook {
+  background: #4267b2;
+}
+.author .sociales li a.linkedin{
+  background: #0077b5;
+}
+.author .sociales li a.instagram {
+  background: #c32aa3;
+}
+.author .sociales li a.github {
+  background: #282D32;
+}
+.author .sociales li a.codepen {
+  background: #14171a;
+}
+
+.tabs {
+  width: 90%;
+  margin-top: 50%px;
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .tabs {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+  }
+}
+@media screen and (min-width: 960px) {
+  .tabs {
+    width: 70%;
+  }
+}
+.tabs__head {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.94);
+  display: flex;
+  align-items: center;
+  list-style: none;
+  overflow-x: auto;
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .tabs__head {
+    flex-direction: column;
+    overflow: hidden;
+  }
+}
+@media screen and (min-width: 960px) {
+  .tabs__head {
+    background: none;
+  }
+}
+.tabs__head li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  width: 100px;
+  height: 50px;
+  text-decoration: none;
+  font-size: .70em;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.3);
+  transition: .4s all;
+  position: relative;
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .tabs__head li a {
+    height: 70px;
+  }
+}
+@media screen and (min-width: 960px) {
+  .tabs__head li a {
+    background: rgba(255, 255, 255, 0.94);
+    flex-direction: row;
+    align-items: center;
+    width: 100px;
+  }
+}
+.tabs__head li a:hover {
+  background: rgba(255, 255, 255, 0.9);
+  color: #000;
+}
+.tabs__head li a:hover span {
+  color: rgba(0, 0, 0, 0.3);
+}
+.tabs__head li a.active-link {
+  box-shadow: 0 2px #f05451 inset;
+  color: #000;
+  background: #fff;
+  z-index: 10;
+}
+.tabs__head li a.active-link span {
+  color: #f05451;
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .tabs__head li a.active-link {
+    box-shadow: 2px 0 #f05451 inset;
+  }
+}
+.tabs__head li a span {
+  margin-bottom: 2px;
+  font-size: 1.2em;
+  pointer-events: none;
+}
+@media screen and (min-width: 960px) {
+  .tabs__head li a span {
+    position: relative;
+    left: -5px;
+  }
+}
+.tabs__content {
+  position: relative;
+  transition: transform 0.4s;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .tabs__content {
+    height: 100%;
+  }
+}
+.tabs__content__item {
+  background: #fff;
+  position: absolute;
+  transition: .5s all;
+  opacity: 0;
+  transition: .3s all;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  z-index: 1;
+}
+@media screen and (min-width: 768px) and (max-width: 960px) {
+  .tabs__content__item {
+    height: 100%;
+  }
+}
+.tabs__content__item .content {
+  padding: .90em 3em 3em 3em;
+  font-size: .90em;
+  width: 100%;
+}
+.tabs__content__item .content p {
+  margin-top: 20px;
+  font-size: .95em;
+  color: #182C61;
+  line-height: 25px;
+}
+.tabs__content__item.active-tab {
+  z-index: 5;
+  opacity: 1;
+}
+th {
+  width: 150px;
+  text-align: left;
+}
